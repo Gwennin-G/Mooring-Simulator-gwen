@@ -5,10 +5,13 @@ from PyQt5.QtWidgets import *
 
 from libraryView import *
 from mooringView import *
-from facade import * 
+from facade import Facade
 
 class MainView(QMainWindow):
+    '''add documentation here'''
+
     def __init__(self,facade):
+        '''add documentation here'''
         super(MainView, self).__init__()
         self.facade = facade
         self.mooringView = MooringView(facade)

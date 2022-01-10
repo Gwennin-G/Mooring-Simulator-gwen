@@ -6,7 +6,10 @@ from PyQt5.QtWidgets import *
 from draggableWidget import *
 
 class MooringView(QWidget):
+    '''add documentation here'''
+
     def __init__(self,facade):
+        '''add documentation here'''
         super(MooringView, self).__init__()
         self.facade = facade
         self.mooringLayout = QVBoxLayout(self)
@@ -14,6 +17,7 @@ class MooringView(QWidget):
         self.setAcceptDrops(True)
 
     def dragEnterEvent(self,event):
+        '''add documentation here'''
         if event.mimeData().hasImage() & event.mimeData().hasText():
             print("event accepted")
             event.accept()
@@ -22,6 +26,7 @@ class MooringView(QWidget):
             event.ignore()
             
     def dropEvent(self,event):
+        '''add documentation here'''
         if event.mimeData().hasImage() & event.mimeData().hasText():
             droppedWidget = DraggableWidget(event.mimeData().text(),event.mimeData().imageData())
             self.mooringLayout.addWidget(droppedWidget)

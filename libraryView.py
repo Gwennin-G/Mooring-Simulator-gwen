@@ -5,11 +5,13 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from draggableWidget import *
-from facade import *
+from facade import Facade
 
 class LibraryView(QWidget):
-    '''class gerant la fenetre du bas contenant les elements draggable'''
+    '''class managing the bottom window containing draggable elements'''
+
     def __init__(self,facade):
+        '''add documentation here'''
         super(LibraryView, self).__init__()
         self.facade = facade
         self.layout = QGridLayout(self)
@@ -20,15 +22,16 @@ class LibraryView(QWidget):
         self.layout.addWidget(elementWidget1)
         self.layout.addWidget(elementWidget2)'''
 
-        self.__getLibrary__()
+        self.__getLibrary()
         self.setLayout(self.layout)
         self.resize(400, 201)
 
-    def __getLibrary__(self):
+    def __getLibrary(self):
+        '''add documentation here'''
         libraryList = list()
         libraryList = self.facade.getLibrary()
         for i in libraryList:
-            elementWidget = DraggableWidget(i.getName(),i.getImage())
+            elementWidget = DraggableWidget(i.name, i.image)
             self.layout.addWidget(elementWidget)
 
 if __name__ == '__main__':

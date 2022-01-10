@@ -3,7 +3,10 @@ import sys
 from mainView import *
 
 class Facade():
+    '''add documentation here'''
+
     def __init__(self):
+        '''add documentation here'''
         self.mooringList = list()
         self.libraryList= list()
         self.libraryList.append(libraryElement("Benthos","ressources\\pictures\\1Benthos_1m_chaine.bmp") )
@@ -16,12 +19,16 @@ class Facade():
 
 
 class libraryElement():
+    '''add documentation here'''
+    
     def __init__(self,name,image):
-        self.name = name
-        self.image = image
+        self._name = name
+        self._image = image
 
-    def getName(self):
-        return self.name
+    @property
+    def name(self):
+        return self._name
 
-    def getImage(self):
-        return self.image
+    @property
+    def image(self):
+        return self._image
