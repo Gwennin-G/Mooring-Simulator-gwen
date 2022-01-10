@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import *
 
 from libraryView import *
 from mooringView import *
-from facade import Facade
+from facade import *
 
 class MainView(QMainWindow):
     '''add documentation here'''
