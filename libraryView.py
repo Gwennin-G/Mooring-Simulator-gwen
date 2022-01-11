@@ -14,6 +14,7 @@ class LibraryView(QWidget):
         '''add documentation here'''
         super(LibraryView, self).__init__()
         self.facade = facade
+        self.facade.subscribe(self)
         self.layout = QGridLayout(self)
 
         '''elementWidget1 = DraggableWidget("element : 1",'dragAndDrop\\aquadopp.bmp')
@@ -33,6 +34,9 @@ class LibraryView(QWidget):
         for i in libraryList:
             elementWidget = DraggableWidget(i.name, i.image)
             self.layout.addWidget(elementWidget)
+    
+    def update(self):
+        None
 
 if __name__ == '__main__':
     print("test")

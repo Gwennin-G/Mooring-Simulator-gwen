@@ -3,10 +3,11 @@ import sys
 from mainView import *
 
 class Facade():
-    '''add documentation here'''
+    '''Temporary facade class  use to test views'''
 
     def __init__(self):
-        '''add documentation here'''
+        '''initialisation of a library and a mooring model'''
+        self.observableList = list()
         self.mooringList = list()
         self.libraryList= list()
         self.libraryList.append(libraryElement("Benthos","ressources\\pictures\\1Benthos_1m_chaine.bmp") )
@@ -17,9 +18,29 @@ class Facade():
     def getLibrary(self):
         return self.libraryList
 
+    def getEntityByName(self,name):
+        for entity in self.libraryList:
+            if entity.name == name:
+                return entity
+        return None
+    
+    def getMooring(self):
+        return self.mooringList
+
+    def addMooringElement(self,name,indexPosition):
+        element = self.getEntityByName(name)
+        self.mooringList.insert(indexPosition,element)
+        self.notice()
+
+    def subscribe(self,observable):
+        self.observableList.append(observable)
+
+    def notice(self):
+        for o in self.observableList:
+            o.update()
 
 class libraryElement():
-    '''add documentation here'''
+    '''elements representation needed by the view'''
     
     def __init__(self,name,image):
         self._name = name

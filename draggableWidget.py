@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import *
 class DraggableWidget(QWidget):
     def __init__(self,name,image):
         super(DraggableWidget, self).__init__()
-        self.name = name
+        self._name = name
         self.image = image
 
         layout = QHBoxLayout(self)
@@ -53,6 +53,11 @@ class DraggableWidget(QWidget):
         drag.setPixmap(pixmap)
         drag.setHotSpot(event.pos())
         drag.exec_(Qt.CopyAction | Qt.MoveAction)
+
+    @property
+    def name(self):
+        return self._name
+
 
 if __name__ == '__main__':
     print("test")
