@@ -8,12 +8,12 @@ class DraggableWidget(QWidget):
     def __init__(self,name,image):
         super(DraggableWidget, self).__init__()
         self._name = name
-        self.image = image
+        self._image = image
 
         layout = QHBoxLayout(self)
         imageLabel = QLabel(self)
-        nameLabel = QLabel(self.name)
-        self.pixmap = QPixmap(self.image)
+        nameLabel = QLabel(self._name)
+        self.pixmap = QPixmap(self._image)
         imageLabel.setPixmap(self.pixmap)
         imageLabel.setAlignment(Qt.AlignCenter)
         nameLabel.setMinimumHeight(self.pixmap.height())
