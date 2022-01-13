@@ -5,6 +5,8 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
 class DraggableWidget(QWidget):
+    '''widget which can be used on drag and drop action
+        used for library grafic representation and mooring entity'''
     def __init__(self,name,image):
         super(DraggableWidget, self).__init__()
         self._name = name

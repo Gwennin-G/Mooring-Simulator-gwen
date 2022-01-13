@@ -8,10 +8,10 @@ from mooringView import *
 from facade import *
 
 class MainView(QMainWindow):
-    '''add documentation here'''
+    '''Manage other View and general action'''
 
     def __init__(self,facade):
-        '''add documentation here'''
+        '''creation of mooringView and libraryView for display'''
         super(MainView, self).__init__()
         self.facade = facade
         self.mooringView = MooringView(facade)

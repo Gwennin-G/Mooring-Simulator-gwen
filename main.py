@@ -1,4 +1,4 @@
-'''add documentation here'''
+'''Launcher of Mooring Simulator'''
 
 import sys
 
