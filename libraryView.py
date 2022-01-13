@@ -8,27 +8,22 @@ from draggableWidget import *
 from facade import *
 
 class LibraryView(QWidget):
-    '''class managing the bottom window containing draggable elements'''
+    '''class managing the right window diplaying library element using draggable elements'''
 
     def __init__(self,facade):
-        '''add documentation here'''
+        '''initialisation of variable and layout,
+            acess to library grafic representation information 
+            sucribing to facade as an observer'''
         super(LibraryView, self).__init__()
         self.facade = facade
         self.facade.subscribe(self)
         self.layout = QGridLayout(self)
-
-        '''elementWidget1 = DraggableWidget("element : 1",'dragAndDrop\\aquadopp.bmp')
-        elementWidget2 = DraggableWidget("element : 2",'dragAndDrop\\aquadopp.bmp')
-        #elementWidget.setAlignment(Qt.AlignRight)
-        self.layout.addWidget(elementWidget1)
-        self.layout.addWidget(elementWidget2)'''
-
         self.__getLibrary()
         self.setLayout(self.layout)
         self.resize(400, 201)
 
     def __getLibrary(self):
-        '''add documentation here'''
+        '''get acess to util information to grafic representation and addition to the layout'''
         libraryList = list()
         libraryList = self.facade.getLibrary()
         for i in libraryList:
@@ -36,6 +31,7 @@ class LibraryView(QWidget):
             self.layout.addWidget(elementWidget)
     
     def update(self):
+        '''not use for the moment'''
         None
 
 if __name__ == '__main__':
