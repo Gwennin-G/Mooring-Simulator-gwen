@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>392</x>
+      <y>288</y>
+      <w>128</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Facade
+--
+- observableList : list
+--
++ subscribe(observable)
+- notice()
++getMooring()
++getLibrary()
++getEntity(String name)
++addElement()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>424</y>
+      <w>136</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>LibraryGraphicView
+--
+- layout : QGridLayout
+--
+- getLibrary()
++ update()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>296</x>
+      <y>128</y>
+      <w>96</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>LibraryTabView
+--
+- tabLayout : Layout
+--
++ update()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>264</y>
+      <w>80</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>MooringManager
+--
+--
++ getMooring()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>568</x>
+      <y>376</y>
+      <w>80</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>LibraryManager
+--
+--
++ getLibrary()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>744</x>
+      <y>264</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Mooring
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>744</x>
+      <y>376</y>
+      <w>80</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Library
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>744</x>
+      <y>464</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Entity
+--
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>336</x>
+      <y>488</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>IOLibrary
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>416</x>
+      <y>488</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>IOMooring
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>496</x>
+      <y>488</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Verifier
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>264</y>
+      <w>88</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+mooring</panel_attributes>
+    <additional_attributes>10.0;80.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>320</y>
+      <w>80</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+library</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>256</y>
+      <w>112</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+manage</panel_attributes>
+    <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>368</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+manage</panel_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>776</x>
+      <y>400</y>
+      <w>64</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=*
+contains</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>744</x>
+      <y>192</y>
+      <w>80</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Element
+--
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>776</x>
+      <y>208</y>
+      <w>64</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=*
+contains</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>104</x>
+      <y>80</y>
+      <w>168</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>MooringView
+--
+- mooringLayout :QVBoxLayout
+--
+- dragEnterEvent()
+- dropEvent()
+- clear()
+- dropListLocation()
++ update()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>256</y>
+      <w>144</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>DraggableWidget
+--
+- name : String
+- image : String 
+--
++ getName()
++ getImage()
+- mousePressEvent()
+- mouseMoveEvent()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>400</y>
+      <w>72</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+visite</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>448</x>
+      <y>400</y>
+      <w>56</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+visite</panel_attributes>
+    <additional_attributes>20.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>368</x>
+      <y>400</y>
+      <w>104</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+visite</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>144</y>
+      <w>72</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=*
+clamping</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;20.0;70.0;20.0;70.0;70.0;40.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>328</x>
+      <y>288</y>
+      <w>80</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+request
+
+
+</panel_attributes>
+    <additional_attributes>80.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>288</y>
+      <w>96</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>mainView
+--
+- facade : Facade
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>248</x>
+      <y>184</y>
+      <w>88</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+mooringView
+
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>232</x>
+      <y>320</y>
+      <w>88</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+libraryView
+
+
+</panel_attributes>
+    <additional_attributes>10.0;130.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>304</x>
+      <y>176</y>
+      <w>96</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+libraryTabView
+
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>104</x>
+      <y>360</y>
+      <w>72</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=*
+widget</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>96</x>
+      <y>184</y>
+      <w>72</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=*
+widget</panel_attributes>
+    <additional_attributes>10.0;90.0;60.0;10.0</additional_attributes>
+  </element>
+</diagram>
