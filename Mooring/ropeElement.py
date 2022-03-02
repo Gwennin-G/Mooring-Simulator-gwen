@@ -1,11 +1,13 @@
 from element import Element
-from library.unmodifiableElementFactory import UnmodifiableElementFactory
+from library.ropeElementFactory import RopeElementFactory
 
-class UnmodifiableElement(Element):
-    def __init__(self, factory):
-        if isinstance(factory, UnmodifiableElementFactory):
+class RopeElement(Element):
+    def __init__(self, factory,fixe,lenght):
+        if isinstance(factory, RopeElementFactory):
             super().__init__()
             self.__factory__ = factory
+            self.__lenghtIsFixe__ = fixe
+            self.__lenght__ = lenght
 
     @property
     def name(self):

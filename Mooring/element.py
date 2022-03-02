@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from Mooring.link import Link
+from mooring.link import Link
 
 class Element(ABC): # hériter de ABC(Abstract base class)
 
