@@ -23,11 +23,11 @@ class RopeElement(Element):
 
     @property
     def mass(self):
-        return self.__factory__.mass
+        return self.__factory__.massByLenght * self.__lenght__
 
     @property
     def length(self):
-        return self.__factory__.length
+        return self.__lenght__
 
     @property
     def diameter(self):
@@ -35,12 +35,20 @@ class RopeElement(Element):
 
     @property
     def projectedArea(self):
-        return self.__factory__.cateprojectedAreagory
+        return self.__factory__.diameter * self.__lenght__
 
     @property
-    def normalDragCoef(self):
-        return self.__factory__.normalDragCoef
+    def normalDragCoeff(self):
+        return self.__factory__.normalDragCoeff
 
     @property
-    def tangentialCoef(self):
-        return self.__factory__.tangentialCoef
+    def tangentialCoeff(self):
+        return self.__factory__.tangentialDragCoeff
+
+    @property
+    def stretchCoeff(self):
+        return self.__factory__.stretchCoeff
+
+    @property
+    def breakingStretch(self):
+        return self.__factory__.breakingStretch

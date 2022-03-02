@@ -28,17 +28,13 @@ class UnmodifiableElement(Element):
         return self.__factory__.length
 
     @property
-    def diameter(self):
-        return self.__factory__.diameter
-
-    @property
     def projectedArea(self):
-        return self.__factory__.cateprojectedAreagory
+        return self.__factory__.projectedArea
 
     @property
-    def normalDragCoef(self):
-        return self.__factory__.normalDragCoef
+    def normalDragCoeff(self):
+        return self.__factory__.normalDragCoeff
 
     @property
-    def tangentialCoef(self):
-        return self.__factory__.tangentialCoef
+    def tangentialDragCoeff(self):
+        return self.__factory__.tangentialDragCoeff
