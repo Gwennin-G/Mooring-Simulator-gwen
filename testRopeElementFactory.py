@@ -4,13 +4,13 @@ from library.ropeElementFactory import RopeElementFactory
 
 
 ref = RopeElementFactory("LPO","parafil kevlar 8,5 mm","\Pictures\Ropes\cable.bmp",-0.0034,0.0085,0.0085,1.3,0.1,[0,0.031428571,0],3000)
-print("objet : unmodifiable element factory",
+print("objet : rope element factory",
     "\ncategorie : ", ref.category ,
     "\nname : ", ref.name ,
     "\nimage : ", ref.imageFile, 
-    "\nmasse par metre : ", ref.massByLenght, 
+    "\nmasse par metre : ", ref.massByLength, 
     "\ndiametre : ", ref.diameter,
-    "\naire projetée par metre : ", ref.projectedAreaByLenght,
+    "\naire projetée par metre : ", ref.projectedAreaByLength,
     "\ncoeff normal : ", ref.normalDragCoeff,
     "\ncoeff tangentiel : ", ref.tangentialDragCoeff,
     "\ncoeff etirement : ", ref.stretchCoeff,

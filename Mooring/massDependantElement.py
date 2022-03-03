@@ -1,12 +1,10 @@
 from mooring.element import Element
 
-
-class RopeElement(Element):
-    def __init__(self, factory,fixe,length):
+class MassDependantElement(Element):
+    def __init__(self, factory,mass):
         super().__init__()
         self.__factory__ = factory
-        self.__lengthIsFixe__ = fixe
-        self.__length__ = length
+        self.__mass__ = mass
 
     @property
     def name(self):
@@ -22,11 +20,11 @@ class RopeElement(Element):
 
     @property
     def mass(self):
-        return self.__factory__.massByLength * self.__length__
+        return self.__mass__
 
     @property
     def length(self):
-        return self.__length__
+        return self.__factory__.length
 
     @property
     def diameter(self):
@@ -34,7 +32,7 @@ class RopeElement(Element):
 
     @property
     def projectedArea(self):
-        return self.__factory__.projectedAreaByLength * self.__length__
+        return self.__factory__.projectedArea
 
     @property
     def normalDragCoeff(self):
@@ -43,11 +41,3 @@ class RopeElement(Element):
     @property
     def tangentialDragCoeff(self):
         return self.__factory__.tangentialDragCoeff
-
-    @property
-    def stretchCoeff(self):
-        return self.__factory__.stretchCoeff
-
-    @property
-    def breakingStretch(self):
-        return self.__factory__.breakingStretch

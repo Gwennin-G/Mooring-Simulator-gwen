@@ -510,7 +510,6 @@ double tangentialDragCoeff
 + getImageFile()
 + getMass()
 + getLength()
-+ getDiameter()
 + getProjectedArea()
 + getNormalDragCoeff()
 + getTangentialCoeff()
@@ -530,6 +529,7 @@ double tangentialDragCoeff
 --
 double length
 --
++ getDiameter()
 + getStrechCoeff()
 + getBreakingStrech()
 

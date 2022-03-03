@@ -6,31 +6,31 @@ class RopeElementFactory(Factory):
 
     def __init__(self,categorie,name,imageFile,mass,diameter,projectedArea,normaDragCoeff,tangentialDragCoeff,stretchCoeff,breakingStretch):
         super().__init__(categorie,name,imageFile)
-        self.__massByLenght__ = mass
+        self.__massByLength__ = mass
         self.__diameter__ = diameter
-        self.__projectedAreaByLenght__ = projectedArea
+        self.__projectedAreaByLength__ = projectedArea
         self.__normalDragCoeff__ = normaDragCoeff
         self.__tangentialDragCoeff__ = tangentialDragCoeff
         self.__stretchCoeff__ = stretchCoeff
         self.__breakingStretch__ = breakingStretch
 
-    def creationElement(self,lenght) -> RopeElement:
-        if lenght is None:
+    def creationElement(self,length) -> RopeElement:
+        if length is None:
             return RopeElement(self,False,0)
         else :
-            return RopeElement(self,True,lenght)
+            return RopeElement(self,True,length)
 
     @property
-    def massByLenght(self):
-        return self.__massByLenght__
+    def massByLength(self):
+        return self.__massByLength__
 
     @property
     def diameter(self):
         return self.__diameter__
 
     @property
-    def projectedAreaByLenght(self):
-        return self.__projectedAreaByLenght__
+    def projectedAreaByLength(self):
+        return self.__projectedAreaByLength__
 
     @property
     def diameter(self):

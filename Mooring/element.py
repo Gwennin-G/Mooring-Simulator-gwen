@@ -36,7 +36,6 @@ class Element(ABC): # hériter de ABC(Abstract base class)
     def length(self):
         pass
 
-
     @property
     @abstractmethod
     def projectedArea(self):
