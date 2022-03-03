@@ -17,13 +17,28 @@ print("objet : rope element factory",
     "\nrupture : ", ref.breakingStretch,
     "\n")
 
-re = ref.creationElement(100)
+re = ref.creationElement(0)
 print("objet : rope element :", isinstance(re,RopeElement),
     "\ncategorie : ", re.category ,
     "\nname : ", re.name ,
     "\nimage : ", re.imageFile, 
     "\nmasse : " , re.mass, 
-    "\nlongueur : ", re.length,
+    "\nlongueur : ", re.length, " est automatique :", re.lengthIsAutomatic,
+    "\ndiameter : ", re.diameter,
+    "\naire projetée : ", re.projectedArea,
+    "\ncoeff normal : ", re.normalDragCoeff,
+    "\ncoeff tangentiel : ", re.tangentialDragCoeff,
+    "\ncoeff etirement : ", re.stretchCoeff,
+    "\nrupture : ", re.breakingStretch,
+    "\n")
+
+re.length = 100
+print("objet : rope element :", isinstance(re,RopeElement),
+    "\ncategorie : ", re.category ,
+    "\nname : ", re.name ,
+    "\nimage : ", re.imageFile, 
+    "\nmasse : " , re.mass, 
+    "\nlongueur : ", re.length, " est automatique :", re.lengthIsAutomatic,
     "\ndiameter : ", re.diameter,
     "\naire projetée : ", re.projectedArea,
     "\ncoeff normal : ", re.normalDragCoeff,

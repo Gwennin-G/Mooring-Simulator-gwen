@@ -22,6 +22,10 @@ class MassDependantElement(Element):
     def mass(self):
         return self.__mass__
 
+    @mass.setter
+    def mass(self,newMass):
+        self.__mass__  = newMass
+
     @property
     def length(self):
         return self.__factory__.length

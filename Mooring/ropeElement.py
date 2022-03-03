@@ -2,10 +2,10 @@ from mooring.element import Element
 
 
 class RopeElement(Element):
-    def __init__(self, factory,fixe,length):
+    def __init__(self, factory,automatic,length):
         super().__init__()
         self.__factory__ = factory
-        self.__lengthIsFixe__ = fixe
+        self.__lengthIsAutomatic__ = automatic
         self.__length__ = length
 
     @property
@@ -25,8 +25,21 @@ class RopeElement(Element):
         return self.__factory__.massByLength * self.__length__
 
     @property
+    def lengthIsAutomatic(self):
+        return self.__lengthIsAutomatic__
+
+    @lengthIsAutomatic.setter
+    def lengthIsAutomatic(self,isAutomatic):
+        self.__lengthIsAutomatic__ = isAutomatic
+
+    @property
     def length(self):
         return self.__length__
+
+    @length.setter
+    def length(self,newLength):
+        self.__lengthIsAutomatic__=False
+        self.__length__ = newLength
 
     @property
     def diameter(self):

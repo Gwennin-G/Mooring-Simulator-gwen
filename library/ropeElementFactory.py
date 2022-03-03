@@ -15,10 +15,10 @@ class RopeElementFactory(Factory):
         self.__breakingStretch__ = breakingStretch
 
     def creationElement(self,length) -> RopeElement:
-        if length is None:
-            return RopeElement(self,False,0)
+        if length is None or length == 0:
+            return RopeElement(self,True,0)
         else :
-            return RopeElement(self,True,length)
+            return RopeElement(self,False,length)
 
     @property
     def massByLength(self):
