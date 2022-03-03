@@ -1,14 +1,17 @@
+import sys 
+
+from library.factory import Factory
 from mooring.unmodifiableElement import UnmodifiableElement
-from factory import Factory
+
+
 
 class UnmodifiableElementFactory(Factory):
 
-    def __init__(self,categorie,name,imageFile,mass,length,projectedArea,normalArea,normalDragCoeff,tangentialDragCoeff):
+    def __init__(self,categorie,name,imageFile,mass,length,projectedArea,normalDragCoeff,tangentialDragCoeff):
         super().__init__(categorie,name,imageFile)
         self.__mass__ = mass
         self.__length__ = length
         self.__projectedArea__ = projectedArea
-        self.__normalArea__ = normalArea
         self.__normalDragCoeff__ = normalDragCoeff
         self.__tangentialDragCoeff__ = tangentialDragCoeff
 
@@ -26,10 +29,6 @@ class UnmodifiableElementFactory(Factory):
     @property
     def projectedArea(self):
         return self.__projectedArea__
-
-    @property
-    def normalArea(self):
-        return self.__normalArea__
 
     @property
     def normalDragCoeff(self):

@@ -1,13 +1,12 @@
-from element import Element
-from library.ropeElementFactory import RopeElementFactory
+from mooring.element import Element
+
 
 class RopeElement(Element):
     def __init__(self, factory,fixe,lenght):
-        if isinstance(factory, RopeElementFactory):
-            super().__init__()
-            self.__factory__ = factory
-            self.__lenghtIsFixe__ = fixe
-            self.__lenght__ = lenght
+        super().__init__()
+        self.__factory__ = factory
+        self.__lenghtIsFixe__ = fixe
+        self.__lenght__ = lenght
 
     @property
     def name(self):
@@ -35,14 +34,14 @@ class RopeElement(Element):
 
     @property
     def projectedArea(self):
-        return self.__factory__.diameter * self.__lenght__
+        return self.__factory__.projectedAreaByLenght * self.__lenght__
 
     @property
     def normalDragCoeff(self):
         return self.__factory__.normalDragCoeff
 
     @property
-    def tangentialCoeff(self):
+    def tangentialDragCoeff(self):
         return self.__factory__.tangentialDragCoeff
 
     @property

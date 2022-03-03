@@ -11,57 +11,49 @@ class Element(ABC): # hériter de ABC(Abstract base class)
         self.__after__ = []     #an element have none or multiple links to next elements 
 
     #getter to an element parameters 
-    @abstractmethod
     @property
+    @abstractmethod
     def name(self):
         pass
 
-    @abstractmethod
     @property
+    @abstractmethod
     def category(self):
         pass
 
-    @abstractmethod
     @property
+    @abstractmethod
     def imageFile(self):
         pass
 
-    @abstractmethod
     @property
+    @abstractmethod
     def mass(self):
         pass
 
-    @abstractmethod
     @property
+    @abstractmethod
     def length(self):
         pass
 
-    @abstractmethod
-    @property
-    def diameter(self):
-        pass
 
-    @abstractmethod
     @property
+    @abstractmethod
     def projectedArea(self):
         pass
 
-    @abstractmethod
     @property
-    def normalDragCoef(self):
+    @abstractmethod
+    def normalDragCoeff(self):
         pass
 
-    @abstractmethod
     @property
-    def tangentialCoef(self):
+    @abstractmethod
+    def tangentialDragCoeff(self):
         pass
 
     #getter/setter for Link
     @property
-    def before(self):
-        return self.__before__
-
-    @property.setter
     def before(self):
         return self.__before__
     

@@ -1,11 +1,12 @@
-from element import Element
-from library.unmodifiableElementFactory import UnmodifiableElementFactory
+import sys
+
+from mooring.element import Element
+
 
 class UnmodifiableElement(Element):
     def __init__(self, factory):
-        if isinstance(factory, UnmodifiableElementFactory):
-            super().__init__()
-            self.__factory__ = factory
+        super().__init__()
+        self.__factory__ = factory
 
     @property
     def name(self):
