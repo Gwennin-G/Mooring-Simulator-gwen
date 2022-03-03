@@ -7,8 +7,8 @@ class Element(ABC): # hériter de ABC(Abstract base class)
     @abstractmethod
     def __init__(self):
         super().__init__()
-        self.__before__ = None  #an element have none or one link to a previous element
-        self.__after__ = []     #an element have none or multiple links to next elements 
+        self.__before = None  #an element have none or one link to a previous element
+        self.__after = []     #an element have none or multiple links to next elements 
 
     #getter to an element parameters 
     @property
@@ -54,22 +54,22 @@ class Element(ABC): # hériter de ABC(Abstract base class)
     #getter/setter for Link
     @property
     def before(self):
-        return self.__before__
+        return self.__before
     
     @before.setter
     def before(self, newElement) :
-        self.__before__ = newElement
+        self.__before = newElement
 
     @property
     def after(self):
-        return self.__after__
+        return self.__after
 
     def addAfter(self, newElement) :
-        self.__after__.append(newElement)
+        self.__after.append(newElement)
     
     def removeAfter(self, removedElement) :
-        if self.__after__.count(removedElement)>0:
-            self.__after__.remove(removedElement)
+        if self.__after.count(removedElement)>0:
+            self.__after.remove(removedElement)
 
 
     

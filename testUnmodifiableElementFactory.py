@@ -3,7 +3,7 @@ from mooring.unmodifiableElement import UnmodifiableElement
 from library.unmodifiableElementFactory import UnmodifiableElementFactory
 
 
-uef = UnmodifiableElementFactory("LPO","microcat","\Pictures\Instrument\microcat.bmp",-3,0.6,0.03,1.3,0.9)
+uef = UnmodifiableElementFactory("LPO", "microcat", "\Pictures\Instrument\microcat.bmp", -3, 0.6, 0.03, 1.3, 0.9 )
 print("objet : unmodifiable element factory",
     "\ncategorie : ", uef.category ,
     "\nname : ", uef.name ,

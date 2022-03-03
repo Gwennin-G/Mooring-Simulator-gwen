@@ -3,21 +3,21 @@
 class Link():
 
     def __init__(self, before, after):
-        self.__before__ = before
-        self.__after__ = after
+        self.__before = before
+        self.__after = after
 
     @property
     def before(self) :
-        return self.__before__
+        return self.__before
 
     @before.setter
     def before(self, newElement) :
-        self.__before__ = newElement
+        self.__before = newElement
 
     @property
     def after(self) :
-        return self.__after__
+        return self.__after
 
     @after.setter
     def after(self, newElement) :
-        self.__after__ = newElement
+        self.__after = newElement

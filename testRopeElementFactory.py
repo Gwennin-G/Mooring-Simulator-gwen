@@ -3,7 +3,7 @@ from mooring.ropeElement import RopeElement
 from library.ropeElementFactory import RopeElementFactory
 
 
-ref = RopeElementFactory("LPO","parafil kevlar 8,5 mm","\Pictures\Ropes\cable.bmp",-0.0034,0.0085,0.0085,1.3,0.1,[0,0.031428571,0],3000)
+ref = RopeElementFactory("LPO", "parafil kevlar 8,5 mm", "\Pictures\Ropes\cable.bmp", -0.0034, 0.0085, 0.0085, 1.3, 0.1, [0,0.031428571,0], 3000)
 print("objet : rope element factory",
     "\ncategorie : ", ref.category ,
     "\nname : ", ref.name ,

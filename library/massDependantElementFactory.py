@@ -3,37 +3,37 @@ from mooring.massDependantElement import MassDependantElement
 
 class MassDependantElementFactory(Factory):
 
-    def __init__(self,categorie,name,imageFile,length,diameter,projectedArea,normaDragCoeff,tangentialDragCoeff):
-        super().__init__(categorie,name,imageFile)
-        self.__length__ = length
-        self.__diameter__ = diameter
-        self.__projectedArea__ = projectedArea
-        self.__normalDragCoeff__ = normaDragCoeff
-        self.__tangentialDragCoeff__ = tangentialDragCoeff
+    def __init__(self, categorie, name, imageFile, length, diameter , projectedArea, normaDragCoeff, tangentialDragCoeff):
+        super().__init__(categorie, name, imageFile)
+        self.__length = length
+        self.__diameter = diameter
+        self.__projectedArea = projectedArea
+        self.__normalDragCoeff = normaDragCoeff
+        self.__tangentialDragCoeff = tangentialDragCoeff
 
-    def creationElement(self,mass) -> MassDependantElement:
+    def creationElement(self, mass) -> MassDependantElement:
             return MassDependantElement(self,mass)
 
     @property
     def length(self):
-        return self.__length__
+        return self.__length
 
     @property
     def diameter(self):
-        return self.__diameter__
+        return self.__diameter
 
     @property
     def projectedArea(self):
-        return self.__projectedArea__
+        return self.__projectedArea
 
     @property
     def diameter(self):
-        return self.__diameter__
+        return self.__diameter
 
     @property
     def normalDragCoeff(self):
-        return self.__normalDragCoeff__
+        return self.__normalDragCoeff
 
     @property
     def tangentialDragCoeff(self):
-        return self.__tangentialDragCoeff__
+        return self.__tangentialDragCoeff

@@ -3,7 +3,7 @@ from mooring.massDependantElement import MassDependantElement
 from library.massDependantElementFactory import MassDependantElementFactory
 
 
-mef = MassDependantElementFactory("LPO","rain train","\Pictures\Anchors\lest.bmp",1,1,0.785,1.2,1)
+mef = MassDependantElementFactory("LPO", "rain train", "\Pictures\Anchors\lest.bmp", 1, 1, 0.785, 1.2 ,1 )
 print("objet : Mass dependant element factory",
     "\ncategorie : ", mef.category ,
     "\nname : ", mef.name ,
