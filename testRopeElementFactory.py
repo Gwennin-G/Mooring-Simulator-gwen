@@ -1,4 +1,4 @@
-
+'''series of test around RopeElement and RopeElementFactory'''
 import unittest
 from mooring.ropeElement import RopeElement
 from library.ropeElementFactory import RopeElementFactory
@@ -7,6 +7,7 @@ from library.ropeElementFactory import RopeElementFactory
 class testRopeElementFactory(unittest.TestCase):
     
     def setUp(self):
+        '''Parameters initialization'''
         self.factoryParameters = {  'category': "LPO",
                                     'name' : "parafil kevlar 8,5 mm",
                                     'image' : "\Pictures\Ropes\cable.bmp",
@@ -21,6 +22,7 @@ class testRopeElementFactory(unittest.TestCase):
         self.elementParameters2 = {'length' : 100}
 
     def test_Rope_Factory_Creation(self):
+        '''test a normal creation of a factory'''
         ref = RopeElementFactory(   self.factoryParameters['category'],
                                     self.factoryParameters['name'], 
                                     self.factoryParameters['image'], 
@@ -46,6 +48,7 @@ class testRopeElementFactory(unittest.TestCase):
         return ref
 
     def test_Rope_Element_Creation(self):
+        '''test a normal creation of an element with the previous factory'''
         ref = self.test_Rope_Factory_Creation()
         re = ref.creationElement(self.elementParameters1)
 
@@ -64,6 +67,7 @@ class testRopeElementFactory(unittest.TestCase):
         return re
 
     def test_Rope_Element_Modification(self):
+        '''test a normal modification of the previous element'''
         re = self.test_Rope_Element_Creation()
         re.length = self.elementParameters2['length']
 
@@ -81,7 +85,7 @@ class testRopeElementFactory(unittest.TestCase):
         self.assertEqual(re.breakingStretch, self.factoryParameters['rupture'])
 
     def test_Element_Wrong_parameters_Name(self):
-
+        '''test the handle of an Key Name Exception for the creation of an element'''
         ref = self.test_Rope_Factory_Creation()
         with self.assertRaises(KeyError):
             ref.creationElement({"lengt" : 0})
