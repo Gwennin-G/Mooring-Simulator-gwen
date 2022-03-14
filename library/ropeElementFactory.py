@@ -1,24 +1,31 @@
+'''this class manage specific functionnality for the RopeElement creation'''
+
 from mooring.ropeElement import RopeElement
 from library.factory import Factory
 
 
 class RopeElementFactory(Factory):
 
-    def __init__(self, categorie, name, imageFile, mass, diameter, projectedArea, normaDragCoeff, tangentialDragCoeff, stretchCoeff, breakingStretch):
+    '''Factory contains most of the parameters of elements their create'''
+    def __init__(self, categorie, name, imageFile, mass, diameter, projectedArea, normalDragCoeff, tangentialDragCoeff, stretchCoeff, breakingStretch):
         super().__init__(categorie, name, imageFile)
         self.__massByLength = mass
         self.__diameter = diameter
         self.__projectedAreaByLength = projectedArea
-        self.__normalDragCoeff = normaDragCoeff
+        self.__normalDragCoeff = normalDragCoeff
         self.__tangentialDragCoeff = tangentialDragCoeff
         self.__stretchCoeff = stretchCoeff
         self.__breakingStretch = breakingStretch
 
-    def creationElement(self, length) -> RopeElement:
-        if length is None or length == 0:
-            return RopeElement(self, True, 0)
+    '''Parameters must be a dictionary with a 'length' key '''
+    def creationElement(self, parameters) -> RopeElement:
+        if "length" in parameters.keys():
+            if parameters["length"] is None or parameters["length"] == 0:
+                return RopeElement(self, True, 0)
+            else :
+                return RopeElement(self, False, parameters["length"])
         else :
-            return RopeElement(self, False, length)
+            raise KeyError('length')
 
     @property
     def massByLength(self):

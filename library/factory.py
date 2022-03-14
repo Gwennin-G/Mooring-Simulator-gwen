@@ -11,7 +11,7 @@ class Factory(ABC): # hériter de ABC(Abstract base class)
         self.__imageFile=imageFile
 
     @abstractmethod
-    def creationElement(self) -> Element:
+    def creationElement(self, parameters) -> Element:
         pass
 
     @property

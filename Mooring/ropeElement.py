@@ -1,9 +1,11 @@
+'''this class manage specific functionnality of a Rope as an element'''
 from mooring.element import Element
-
 
 class RopeElement(Element):
     def __init__(self, factory, automatic, length):
         super().__init__()
+        '''Most of the parameters about a Ropes are contained by the factory which create it.
+        A RopeElement only contain a link to the factory, its length , and a boolean which determine if length is fixe or could be automatly modify '''
         self.__factory = factory
         self.__lengthIsAutomatic = automatic
         self.__length = length

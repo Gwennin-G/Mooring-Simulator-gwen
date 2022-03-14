@@ -1,49 +1,91 @@
-import sys
+
+import unittest
 from mooring.ropeElement import RopeElement
 from library.ropeElementFactory import RopeElementFactory
 
 
-ref = RopeElementFactory("LPO", "parafil kevlar 8,5 mm", "\Pictures\Ropes\cable.bmp", -0.0034, 0.0085, 0.0085, 1.3, 0.1, [0,0.031428571,0], 3000)
-print("objet : rope element factory",
-    "\ncategorie : ", ref.category ,
-    "\nname : ", ref.name ,
-    "\nimage : ", ref.imageFile, 
-    "\nmasse par metre : ", ref.massByLength, 
-    "\ndiametre : ", ref.diameter,
-    "\naire projetée par metre : ", ref.projectedAreaByLength,
-    "\ncoeff normal : ", ref.normalDragCoeff,
-    "\ncoeff tangentiel : ", ref.tangentialDragCoeff,
-    "\ncoeff etirement : ", ref.stretchCoeff,
-    "\nrupture : ", ref.breakingStretch,
-    "\n")
+class testRopeElementFactory(unittest.TestCase):
+    
+    def setUp(self):
+        self.factoryParameters = {  'category': "LPO",
+                                    'name' : "parafil kevlar 8,5 mm",
+                                    'image' : "\Pictures\Ropes\cable.bmp",
+                                    'masse' : -0.0034,
+                                    'diametre' : 0.0085,
+                                    'aireProjetee' : 0.0085,
+                                    'coeffNormal' : 1.3,
+                                    'coeffTangentiel' : 0.1,
+                                    'coeffEtirement' : [0,0.031428571,0],
+                                    'rupture' : 3000}
+        self.elementParameters1 = {'length' : 0}
+        self.elementParameters2 = {'length' : 100}
 
-re = ref.creationElement(0)
-print("objet : rope element :", isinstance(re,RopeElement),
-    "\ncategorie : ", re.category ,
-    "\nname : ", re.name ,
-    "\nimage : ", re.imageFile, 
-    "\nmasse : " , re.mass, 
-    "\nlongueur : ", re.length, " est automatique :", re.lengthIsAutomatic,
-    "\ndiameter : ", re.diameter,
-    "\naire projetée : ", re.projectedArea,
-    "\ncoeff normal : ", re.normalDragCoeff,
-    "\ncoeff tangentiel : ", re.tangentialDragCoeff,
-    "\ncoeff etirement : ", re.stretchCoeff,
-    "\nrupture : ", re.breakingStretch,
-    "\n")
+    def test_Rope_Factory_Creation(self):
+        ref = RopeElementFactory(   self.factoryParameters['category'],
+                                    self.factoryParameters['name'], 
+                                    self.factoryParameters['image'], 
+                                    self.factoryParameters['masse'],
+                                    self.factoryParameters['diametre'],
+                                    self.factoryParameters['aireProjetee'],
+                                    self.factoryParameters['coeffNormal'],
+                                    self.factoryParameters['coeffTangentiel'],
+                                    self.factoryParameters['coeffEtirement'],
+                                    self.factoryParameters['rupture'])
 
-re.length = 100
-print("objet : rope element :", isinstance(re,RopeElement),
-    "\ncategorie : ", re.category ,
-    "\nname : ", re.name ,
-    "\nimage : ", re.imageFile, 
-    "\nmasse : " , re.mass, 
-    "\nlongueur : ", re.length, " est automatique :", re.lengthIsAutomatic,
-    "\ndiameter : ", re.diameter,
-    "\naire projetée : ", re.projectedArea,
-    "\ncoeff normal : ", re.normalDragCoeff,
-    "\ncoeff tangentiel : ", re.tangentialDragCoeff,
-    "\ncoeff etirement : ", re.stretchCoeff,
-    "\nrupture : ", re.breakingStretch,
-    "\n")
+        self.assertIsInstance(ref,RopeElementFactory)
+        self.assertEqual(ref.category, self.factoryParameters['category'])
+        self.assertEqual(ref.name, self.factoryParameters['name'])
+        self.assertEqual(ref.imageFile, self.factoryParameters['image'])
+        self.assertEqual(ref.massByLength, self.factoryParameters['masse'])
+        self.assertEqual(ref.diameter, self.factoryParameters['diametre'])
+        self.assertEqual(ref.projectedAreaByLength, self.factoryParameters['aireProjetee'])
+        self.assertEqual(ref.normalDragCoeff, self.factoryParameters['coeffNormal'])
+        self.assertEqual(ref.tangentialDragCoeff, self.factoryParameters['coeffTangentiel'])
+        self.assertEqual(ref.stretchCoeff, self.factoryParameters['coeffEtirement'])
+        self.assertEqual(ref.breakingStretch, self.factoryParameters['rupture'])
+        return ref
 
+    def test_Rope_Element_Creation(self):
+        ref = self.test_Rope_Factory_Creation()
+        re = ref.creationElement(self.elementParameters1)
+
+        self.assertIsInstance(re,RopeElement)
+        self.assertEqual(re.category, self.factoryParameters['category'])
+        self.assertEqual(re.name, self.factoryParameters['name'])
+        self.assertEqual(re.imageFile, self.factoryParameters['image'])
+        self.assertEqual(re.mass, self.factoryParameters['masse'] * self.elementParameters1['length'])
+        self.assertEqual(re.length, self.elementParameters1['length'])
+        self.assertEqual(re.diameter, self.factoryParameters['diametre'])
+        self.assertEqual(re.projectedArea, self.factoryParameters['aireProjetee'] * self.elementParameters1['length'])
+        self.assertEqual(re.normalDragCoeff, self.factoryParameters['coeffNormal'])
+        self.assertEqual(re.tangentialDragCoeff, self.factoryParameters['coeffTangentiel'])
+        self.assertEqual(re.stretchCoeff, self.factoryParameters['coeffEtirement'])
+        self.assertEqual(re.breakingStretch, self.factoryParameters['rupture'])
+        return re
+
+    def test_Rope_Element_Modification(self):
+        re = self.test_Rope_Element_Creation()
+        re.length = self.elementParameters2['length']
+
+        self.assertIsInstance(re,RopeElement)
+        self.assertEqual(re.category, self.factoryParameters['category'])
+        self.assertEqual(re.name, self.factoryParameters['name'])
+        self.assertEqual(re.imageFile, self.factoryParameters['image'])
+        self.assertEqual(re.mass, self.factoryParameters['masse'] * self.elementParameters2['length'])
+        self.assertEqual(re.length, self.elementParameters2['length'])
+        self.assertEqual(re.diameter, self.factoryParameters['diametre'])
+        self.assertEqual(re.projectedArea, self.factoryParameters['aireProjetee'] * self.elementParameters2['length'])
+        self.assertEqual(re.normalDragCoeff, self.factoryParameters['coeffNormal'])
+        self.assertEqual(re.tangentialDragCoeff, self.factoryParameters['coeffTangentiel'])
+        self.assertEqual(re.stretchCoeff, self.factoryParameters['coeffEtirement'])
+        self.assertEqual(re.breakingStretch, self.factoryParameters['rupture'])
+
+    def test_Element_Wrong_parameters_Name(self):
+
+        ref = self.test_Rope_Factory_Creation()
+        with self.assertRaises(KeyError):
+            ref.creationElement({"lengt" : 0})
+
+
+if __name__ == '__main__':
+    unittest.main()
