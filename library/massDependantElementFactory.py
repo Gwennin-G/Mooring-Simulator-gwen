@@ -40,16 +40,3 @@ class MassDependantElementFactory(Factory):
     @property
     def tangentialDragCoeff(self):
         return self.__tangentialDragCoeff
-
-
-if __name__ == '__main__':
-    mef = MassDependantElementFactory("LPO", "rain train", "\Pictures\Anchors\lest.bmp", 1, 1, 0.785, 1.2 ,1 )
-    print("objet : Mass dependant element factory",
-    "\ncategorie : ", mef.category ,
-    "\nname : ", mef.name ,
-    "\nimage : ", mef.imageFile, 
-    "\nlongueur : ", mef.length,
-    "\naire projetée : ", mef.projectedArea,
-    "\ncoeff normal : ", mef.normalDragCoeff,
-    "\ncoeff tangentiel : ", mef.tangentialDragCoeff
-    ,"\n")

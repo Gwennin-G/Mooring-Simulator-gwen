@@ -5,7 +5,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from draggableWidget import *
-from facade import *
+from facadeTest import *
 
 class LibraryView(QWidget):
     '''class managing the right window diplaying library element using draggable elements'''
